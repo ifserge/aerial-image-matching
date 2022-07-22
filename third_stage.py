@@ -141,7 +141,7 @@ for i_img,(fl, x, y, a) in enumerate(preds):
     matches = sorted(results, key=lambda x: x[1], reverse=True)
     print('max matches: ', matches[0])
     
-    if (matches[0][1] > 250) or (matches[0][1] > len(kp1) * 0.5):
+    if (matches[0][1] > 100) or (matches[0][1] > len(kp1) * 0.5):
         MAX_SIZE = 1024
         ori_img1_ = np.array(Image.open(preds[i_img][0]))
         ori_img1_ = cv2.cvtColor(ori_img1_, cv2.COLOR_RGB2GRAY)
